@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guilherme Santiago × SEC — Proposta de Comunicação</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --green: #8DDC00;
+    --green-dim: #7AC400;
+    --pink: #FF4081;
+    --orange: #FF6D00;
+    --yellow: #FFD600;
+    --blue: #00B0FF;
+    --purple: #D500F9;
+    --gray-900: #0A0A0A;
+    --gray-800: #111111;
+    --gray-700: #1A1A1A;
+    --gray-600: #222222;
+    --gray-400: #555555;
+    --gray-300: #888888;
+    --gray-100: #CCCCCC;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--white);
+  }
+  .logo span { color: var(--green); }
+  .nav-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-300);
+  }
+
+  /* ── PAGE ── */
+  .page {
+    min-height: 100vh;
+    padding: 120px 48px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page + .page { border-top: 1px solid rgba(255,255,255,0.06); }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-300);
+    margin-bottom: 24px;
+    display: block;
+  }
+  .eyebrow-green { color: var(--green); }
+
+  .headline-xl {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+  }
+  .headline-lg {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+  }
+  .headline-md {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+  .subhead {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--gray-100);
+    line-height: 1.6;
+    max-width: 640px;
+  }
+  .body-text {
+    font-size: 15px;
+    color: var(--gray-300);
+    line-height: 1.7;
+  }
+  .text-green { color: var(--green); }
+
+  .rainbow-bar {
+    height: 4px;
+    background: linear-gradient(90deg, #FF4081, #FF6D00, #FFD600, #00E676, #00B0FF, #D500F9);
+    border-radius: 2px;
+    margin-bottom: 48px;
+    width: 80px;
+  }
+
+  /* ── COVER ── */
+  #cover {
+    background: var(--black);
+    min-height: 100vh;
+    justify-content: flex-end;
+    padding-bottom: 100px;
+  }
+  .cover-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: flex-end;
+  }
+  .cover-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  .cover-client-block {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    padding: 24px 32px;
+    text-align: right;
+  }
+  .cover-client-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray-300);
+    margin-bottom: 8px;
+  }
+  .cover-client-name {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+  .cover-client-city {
+    font-size: 14px;
+    color: var(--gray-300);
+    margin-top: 4px;
+  }
+  .cover-tagline {
+    font-size: 16px;
+    color: var(--gray-300);
+    margin-top: 40px;
+    border-left: 2px solid var(--green);
+    padding-left: 16px;
+    max-width: 480px;
+    line-height: 1.5;
+  }
+  .cover-tagline strong { color: var(--white); }
+  .cover-bg-number {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-size: 500px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.02);
+    line-height: 1;
+    letter-spacing: -20px;
+    user-select: none;
+    pointer-events: none;
+  }
+  .cover-bottom-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF4081, #FF6D00, #FFD600, #00E676, #00B0FF, #D500F9);
+  }
+
+  /* ── PROBLEMA ── */
+  #problema { background: var(--gray-900); }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 64px;
+    align-items: start;
+  }
+  .problem-items { display: flex; flex-direction: column; gap: 0; }
+  .problem-item {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .problem-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+  .problem-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .problem-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .problem-desc { font-size: 14px; color: var(--gray-300); line-height: 1.6; }
+  .problem-right {
+    padding: 40px;
+    background: rgba(141,220,0,0.04);
+    border: 1px solid rgba(141,220,0,0.15);
+    border-radius: 4px;
+    position: sticky;
+    top: 120px;
+  }
+  .problem-right-title {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .problem-right-text { font-size: 15px; color: var(--gray-300); line-height: 1.7; }
+
+  /* ── SERVIÇOS ── */
+  #servicos { background: var(--black); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 64px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .service-card {
+    background: var(--gray-800);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card.featured {
+    background: rgba(141,220,0,0.06);
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
+    align-items: center;
+    border: 1px solid rgba(141,220,0,0.2);
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .service-card:nth-child(2)::before { background: var(--blue); }
+  .service-card:nth-child(3)::before { background: var(--orange); }
+  .service-card:nth-child(4)::before { background: var(--pink); }
+  .service-card:nth-child(5)::before { background: var(--yellow); }
+  .service-card:nth-child(6)::before { background: var(--purple); }
+  .service-num {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--gray-400);
+    margin-bottom: 16px;
+  }
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--white);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+  .service-name-green { color: var(--green); }
+  .service-desc { font-size: 13px; color: var(--gray-300); line-height: 1.6; }
+  .service-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    background: rgba(141,220,0,0.1);
+    border: 1px solid rgba(141,220,0,0.3);
+    border-radius: 2px;
+    padding: 4px 10px;
+    margin-bottom: 16px;
+  }
+  .service-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .service-items li {
+    font-size: 13px;
+    color: var(--gray-300);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .service-items li::before {
+    content: '→';
+    color: var(--green);
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  /* ── COBERTURA ── */
+  #cobertura { background: var(--gray-900); }
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 64px;
+    align-items: start;
+  }
+  .coverage-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .coverage-step {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    align-items: flex-start;
+    position: relative;
+  }
+  .coverage-step:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+  .coverage-step-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    background: linear-gradient(135deg, rgba(141,220,0,0.6), rgba(0,176,255,0.4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    flex-shrink: 0;
+    width: 48px;
+    margin-top: 2px;
+  }
+  .coverage-step-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .coverage-step-desc { font-size: 14px; color: var(--gray-300); line-height: 1.6; }
+  .coverage-right-block {
+    padding: 40px;
+    background: rgba(141,220,0,0.04);
+    border: 1px solid rgba(141,220,0,0.15);
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+  .coverage-right-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 16px;
+  }
+  .coverage-right-title {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .coverage-right-sub {
+    font-size: 14px;
+    color: var(--green);
+    font-weight: 500;
+  }
+  .coverage-note {
+    padding: 24px 28px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-left: 3px solid rgba(141,220,0,0.4);
+    border-radius: 2px;
+    font-size: 14px;
+    color: var(--gray-300);
+    line-height: 1.7;
+  }
+  .coverage-note strong { color: var(--white); }
+
+  /* ── FLUXO ── */
+  #fluxo { background: var(--black); }
+  .workflow-flow {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    position: relative;
+    align-items: stretch;
+  }
+  .workflow-step {
+    padding: 32px 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .workflow-step::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 30%;
+    height: 40%; width: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+  .workflow-step:last-child::after { display: none; }
+  .workflow-step-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -2px;
+  }
+  .workflow-step-name {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .workflow-step-desc {
+    font-size: 12px;
+    color: var(--gray-300);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .workflow-step-accent {
+    height: 2px;
+    margin-top: 20px;
+    border-radius: 1px;
+  }
+  .workflow-step:nth-child(1) .workflow-step-accent { background: var(--pink); }
+  .workflow-step:nth-child(2) .workflow-step-accent { background: var(--orange); }
+  .workflow-step:nth-child(3) .workflow-step-accent { background: var(--yellow); }
+  .workflow-step:nth-child(4) .workflow-step-accent { background: var(--green); }
+  .workflow-step:nth-child(5) .workflow-step-accent { background: var(--blue); }
+  .workflow-bar {
+    margin-top: 2px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--pink), var(--orange), var(--yellow), var(--green), var(--blue));
+  }
+
+  /* ── OBJETIVOS ── */
+  #objetivos { background: var(--gray-900); }
+  .obj-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 64px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .obj-card {
+    background: var(--gray-800);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .obj-card::before {
+    content: attr(data-num);
+    position: absolute;
+    right: 24px; top: 24px;
+    font-family: var(--font-display);
+    font-size: 100px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    letter-spacing: -4px;
+  }
+  .obj-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .obj-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+  .obj-text { font-size: 14px; color: var(--gray-300); line-height: 1.7; }
+
+  /* ── INVESTIMENTO ── */
+  #investimento { background: var(--black); }
+  .invest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 64px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .invest-price-block {
+    background: rgba(141,220,0,0.06);
+    border: 1px solid rgba(141,220,0,0.2);
+    padding: 64px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .invest-price-block::before {
+    content: 'R$';
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 200px;
+    font-weight: 900;
+    color: rgba(141,220,0,0.04);
+    top: 0; left: -20px;
+    line-height: 1;
+    user-select: none;
+  }
+  .invest-price-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .invest-price-value {
+    font-family: var(--font-display);
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -4px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .invest-price-period {
+    font-size: 16px;
+    color: var(--green);
+    font-weight: 500;
+    margin-top: 8px;
+  }
+  .invest-price-note {
+    font-size: 13px;
+    color: var(--gray-400);
+    margin-top: 24px;
+    line-height: 1.6;
+    max-width: 280px;
+  }
+  .invest-bullets {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .invest-bullet {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .invest-bullet-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+  .invest-bullet-text { font-size: 14px; color: var(--gray-100); }
+  .invest-items-block {
+    background: var(--gray-800);
+    padding: 48px;
+  }
+  .invest-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .invest-table tr { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .invest-table tr:last-child { border-bottom: none; }
+  .invest-table td {
+    padding: 14px 0;
+    font-size: 14px;
+    color: var(--gray-300);
+  }
+  .invest-table td:last-child {
+    text-align: right;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .invest-table .row-item-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .invest-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(141,220,0,0.5);
+    flex-shrink: 0;
+  }
+  .invest-note-box {
+    margin-top: 32px;
+    padding: 20px 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 3px;
+    font-size: 12px;
+    color: var(--gray-400);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ── PRÓXIMOS PASSOS ── */
+  #proximos { background: var(--gray-900); min-height: 100vh; justify-content: center; }
+  .closing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 64px;
+    align-items: center;
+  }
+  .closing-headline {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-bottom: 32px;
+  }
+  .closing-text {
+    font-size: 16px;
+    color: var(--gray-300);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+  .closing-steps { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+  .closing-step { display: flex; gap: 12px; align-items: flex-start; }
+  .closing-step-num {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(141,220,0,0.15);
+    border: 1px solid rgba(141,220,0,0.4);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .closing-step-num span { font-size: 10px; color: var(--green); font-weight: 700; }
+  .closing-step-text { font-size: 14px; color: var(--gray-300); line-height: 1.6; }
+  .closing-quote {
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid var(--green);
+    background: rgba(255,255,255,0.02);
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+  .closing-quote-text {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+    margin-bottom: 16px;
+  }
+  .closing-quote-attr {
+    font-size: 12px;
+    color: var(--green);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .closing-summary-box {
+    padding: 32px;
+    background: rgba(141,220,0,0.05);
+    border: 1px solid rgba(141,220,0,0.2);
+    border-radius: 3px;
+  }
+  .closing-summary-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 16px;
+  }
+  .closing-summary-items { display: flex; flex-direction: column; gap: 10px; }
+  .closing-summary-item { font-size: 14px; color: var(--gray-100); }
+  .closing-summary-item strong { color: var(--white); }
+  .closing-final {
+    margin-top: 80px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    text-align: center;
+  }
+  .closing-final-name {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .closing-final-name span { color: var(--green); }
+  .closing-final-role {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 12px;
+  }
+  .closing-final-contact {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green);
+    font-family: var(--font-display);
+    letter-spacing: -0.3px;
+  }
+  .closing-meta {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--gray-400);
+  }
+
+  /* ── CURSOS & CERTIFICAÇÕES ── */
+  #autoridade { background: var(--gray-900); }
+  .certs-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-top: 64px;
+    align-items: start;
+  }
+  .certs-left-block {
+    position: sticky;
+    top: 120px;
+  }
+  .certs-stat {
+    padding: 40px;
+    background: rgba(141,220,0,0.05);
+    border: 1px solid rgba(141,220,0,0.2);
+    border-radius: 4px;
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .certs-stat::before {
+    content: '15';
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 160px;
+    font-weight: 900;
+    color: rgba(141,220,0,0.04);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+    letter-spacing: -8px;
+    user-select: none;
+  }
+  .certs-stat-value {
+    font-family: var(--font-display);
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--green);
+    letter-spacing: -4px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .certs-stat-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-300);
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .certs-left-note {
+    font-size: 13px;
+    color: var(--gray-400);
+    line-height: 1.7;
+    border-left: 2px solid rgba(141,220,0,0.3);
+    padding-left: 16px;
+  }
+  .certs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .cert-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .cert-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+  .cert-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+  .cert-content { flex: 1; }
+  .cert-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .cert-institution {
+    font-size: 12px;
+    color: var(--gray-400);
+    letter-spacing: 0.5px;
+  }
+  .cert-tag {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-top: 2px;
+    white-space: nowrap;
+  }
+  .cert-tag.comunicacao {
+    color: var(--blue);
+    background: rgba(0,176,255,0.08);
+    border: 1px solid rgba(0,176,255,0.2);
+  }
+  .cert-tag.gestao {
+    color: var(--orange);
+    background: rgba(255,109,0,0.08);
+    border: 1px solid rgba(255,109,0,0.2);
+  }
+  .cert-tag.futebol {
+    color: var(--green);
+    background: rgba(141,220,0,0.08);
+    border: 1px solid rgba(141,220,0,0.2);
+  }
+  .cert-tag.marketing {
+    color: var(--pink);
+    background: rgba(255,64,129,0.08);
+    border: 1px solid rgba(255,64,129,0.2);
+  }
+  .cert-tag.dados {
+    color: var(--purple);
+    background: rgba(213,0,249,0.08);
+    border: 1px solid rgba(213,0,249,0.2);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo">Guilherme <span>Santiago</span></div>
+  <div class="nav-tag">Comunicação Digital · SEC — Sorriso</div>
+</nav>
+
+<!-- ──────────────────────────────────────────
+     P01 — CAPA
+────────────────────────────────────────── -->
+<section class="page" id="cover">
+  <div class="cover-bg-number">GS</div>
+
+  <div class="cover-grid">
+    <div class="cover-left">
+      <span class="eyebrow eyebrow-green">Proposta de Parceria — Comunicação Digital</span>
+      <h1 class="headline-xl">
+        COMUNI<span class="text-green">CAÇÃO</span><br>QUE<br>MOVE.
+      </h1>
+      <p class="cover-tagline">
+        Uma parceria para <strong>transformar o SEC em referência de comunicação</strong> no futebol regional — do Instagram ao grupo da imprensa, dos bastidores ao torcedor.
+      </p>
+    </div>
+
+    <div class="cover-right">
+      <div class="cover-client-block">
+        <div class="cover-client-label">Proposta para</div>
+        <div class="cover-client-name">SEC</div>
+        <div class="cover-client-city">Sorriso · MT</div>
+        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+          <div class="cover-client-label" style="margin-bottom: 4px;">À atenção de</div>
+          <div style="font-size: 16px; color: var(--white); font-weight: 600;">Leocir</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-bottom-bar"></div>
+</section>
+
+<!-- ──────────────────────────────────────────
+     P02 — O CENÁRIO
+────────────────────────────────────────── -->
+<section class="page" id="problema">
+  <span class="eyebrow">O Cenário</span>
+  <h2 class="headline-lg">O SEC TEM HISTÓRIA.<br><span class="text-green">A COMUNICAÇÃO</span><br>PODE IR MAIS LONGE.</h2>
+
+  <div class="problem-grid">
+    <div class="problem-items">
+      <div class="problem-item">
+        <div class="problem-dot"></div>
+        <div>
+          <div class="problem-title">Frequência que gera hábito</div>
+          <div class="problem-desc">Publicações regulares criam o hábito do torcedor de acompanhar o clube. Quanto mais consistente a presença digital, mais forte o vínculo com a torcida.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-dot"></div>
+        <div>
+          <div class="problem-title">Identidade visual que impõe respeito</div>
+          <div class="problem-desc">Uma comunicação padronizada e profissional eleva a percepção do clube junto a torcedores, parceiros e patrocinadores. A identidade visual é parte do valor do SEC.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-dot"></div>
+        <div>
+          <div class="problem-title">Imprensa como aliada</div>
+          <div class="problem-desc">Com um fluxo organizado de informações, veículos locais e regionais passam a contar com o clube como fonte confiável — ampliando a cobertura espontânea.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-dot"></div>
+        <div>
+          <div class="problem-title">Atletas e comissão em evidência</div>
+          <div class="problem-desc">Jogadores e comissão técnica constroem suas carreiras também pelo que é publicado. Dar visibilidade a quem representa o clube é valorizar o plantel.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-dot"></div>
+        <div>
+          <div class="problem-title">Comunicação como ativo comercial</div>
+          <div class="problem-desc">Uma presença digital ativa e profissional é argumento real para fechar e renovar patrocínios. O clube que se comunica bem tem mais a oferecer ao mercado.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-right">
+      <div class="problem-right-title">A<br>Parceria.</div>
+      <div class="problem-right-text">
+        Esta proposta vai além de posts para o Instagram. É uma parceria de comunicação do clube — que organiza o fluxo de informações para a imprensa, profissionaliza a presença digital e constrói uma identidade reconhecível para o SEC dentro e fora de campo.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────
+     P03 — SERVIÇOS
+────────────────────────────────────────── -->
+<section class="page" id="servicos">
+  <span class="eyebrow">Escopo da Parceria</span>
+  <h2 class="headline-lg">O QUE ESTÁ<br><span class="text-green">INCLUÍDO.</span></h2>
+
+  <div class="services-grid">
+
+    <!-- FEATURED: Instagram -->
+    <div class="service-card featured">
+      <div>
+        <span class="service-tag">Canal Principal</span>
+        <div class="service-name"><span class="service-name-green">Gestão</span><br>do Instagram</div>
+        <div class="service-desc">O perfil do SEC como canal ativo de comunicação com torcedores, atletas, imprensa e patrocinadores. Planejamento, publicação, legendas, padronização visual e acompanhamento de desempenho.</div>
+      </div>
+      <div>
+        <ul class="service-items">
+          <li>Planejamento e calendário de publicações</li>
+          <li>Criação de legendas e textos editoriais</li>
+          <li>Padronização da comunicação visual</li>
+          <li>Gerenciamento e organização do perfil</li>
+          <li>Acompanhamento básico de métricas</li>
+          <li>Conteúdo de jogos, atletas, bastidores e institucional</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Artes -->
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-name">Criação<br>de Artes</div>
+      <div class="service-desc">Peças gráficas para toda a comunicação do clube, com identidade visual padronizada e profissional.</div>
+      <ul class="service-items">
+        <li>Escalações e pré-jogo</li>
+        <li>Resultados e próximos jogos</li>
+        <li>Destaques de atletas</li>
+        <li>Datas comemorativas</li>
+        <li>Comunicados e anúncios</li>
+        <li>Conteúdo de patrocinadores</li>
+      </ul>
+    </div>
+
+    <!-- Reels -->
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-name">Reels &<br>Vídeo</div>
+      <div class="service-desc">Edição de conteúdo audiovisual fornecido pela equipe do SEC, adaptado para formatos e dinâmicas do Instagram.</div>
+      <ul class="service-items">
+        <li>Edição de vídeos de jogos e treinos</li>
+        <li>Produção de Reels para Instagram</li>
+        <li>Conteúdo de bastidores e atletas</li>
+        <li>Adaptação para formatos da plataforma</li>
+      </ul>
+    </div>
+
+    <!-- Imprensa -->
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-name">Grupo<br><span class="service-name-green">da Imprensa</span></div>
+      <div class="service-desc">Alimentação organizada e regular do grupo de imprensa do clube — garantindo que veículos locais e regionais tenham acesso rápido às informações do SEC.</div>
+      <ul class="service-items">
+        <li>Distribuição de notas e comunicados</li>
+        <li>Informações de jogos, escalações e resultados</li>
+        <li>Material fotográfico e audiovisual disponível</li>
+        <li>Fluxo ágil em dias de partida</li>
+      </ul>
+    </div>
+
+    <!-- Cobertura -->
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-name">Cobertura<br>Presencial</div>
+      <div class="service-desc">Até 2 coberturas presenciais por mês em Sorriso, com acompanhamento do jogo de ponta a ponta nas redes sociais e captação complementar de material.</div>
+      <ul class="service-items">
+        <li>Pré-jogo e escalação ao vivo</li>
+        <li>Stories e atualizações em tempo real</li>
+        <li>Resultado e pós-jogo</li>
+        <li>Captação de fotos e vídeos</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────
+     P04 — COBERTURA DE JOGOS
+────────────────────────────────────────── -->
+<section class="page" id="cobertura">
+  <span class="eyebrow">Dias de Jogo</span>
+  <h2 class="headline-lg">O TORCEDOR<br>NO ESTÁDIO.<br>O CLUBE NO CELULAR.</h2>
+
+  <div class="coverage-grid">
+    <div class="coverage-timeline">
+      <div class="coverage-step">
+        <div class="coverage-step-num">01</div>
+        <div>
+          <div class="coverage-step-title">Pré-jogo</div>
+          <div class="coverage-step-desc">Divulgação do horário, local e escalação. Aquecimento da torcida com conteúdo que cria expectativa antes da bola rolar.</div>
+        </div>
+      </div>
+      <div class="coverage-step">
+        <div class="coverage-step-num">02</div>
+        <div>
+          <div class="coverage-step-title">Escalação</div>
+          <div class="coverage-step-desc">Arte profissional com o time titular publicada antes do apito inicial — conteúdo de alto engajamento em dias de jogo.</div>
+        </div>
+      </div>
+      <div class="coverage-step">
+        <div class="coverage-step-num">03</div>
+        <div>
+          <div class="coverage-step-title">Resultado</div>
+          <div class="coverage-step-desc">Placar final divulgado imediatamente ao término, com arte padronizada e dados relevantes da partida.</div>
+        </div>
+      </div>
+      <div class="coverage-step">
+        <div class="coverage-step-num">04</div>
+        <div>
+          <div class="coverage-step-title">Pós-jogo</div>
+          <div class="coverage-step-desc">Destaques da partida, melhores momentos em vídeo (se disponíveis), primeiras impressões e material para alimentar a imprensa.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="coverage-right-block">
+        <div class="coverage-right-label">Coberturas mensais</div>
+        <div class="coverage-right-title">Até 2</div>
+        <div class="coverage-right-sub">jogos presenciais em Sorriso</div>
+      </div>
+
+      <div class="coverage-note">
+        O material audiovisual será fornecido <strong>majoritariamente pela equipe do SEC</strong>. Durante as coberturas presenciais, será realizada captação complementar de fotos e vídeos quando necessário.
+        <br><br>
+        A cobertura é planejada para que o torcedor tenha a sensação de <strong>acompanhar o clube em tempo real</strong>, mesmo sem estar presente no estádio.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────
+     P05 — FLUXO DE TRABALHO
+────────────────────────────────────────── -->
+<section class="page" id="fluxo">
+  <span class="eyebrow">Fluxo de Trabalho</span>
+  <h2 class="headline-lg">COMO A<br>PARCERIA FUNCIONA.</h2>
+
+  <div class="workflow-flow">
+    <div class="workflow-step">
+      <div class="workflow-step-num">01</div>
+      <div class="workflow-step-name">Planejamento</div>
+      <div class="workflow-step-desc">Definição do calendário mensal de publicações, pautas prioritárias e datas de cobertura presencial, alinhado com a agenda do clube.</div>
+      <div class="workflow-step-accent"></div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-step-num">02</div>
+      <div class="workflow-step-name">Recebimento</div>
+      <div class="workflow-step-desc">O SEC envia fotos, vídeos, escalações, informações oficiais e comunicados via canal combinado — principalmente em dias de jogo.</div>
+      <div class="workflow-step-accent"></div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-step-num">03</div>
+      <div class="workflow-step-name">Produção</div>
+      <div class="workflow-step-desc">Transformação do material em conteúdo publicável: criação de artes, edição de vídeos, textos e distribuição para a imprensa.</div>
+      <div class="workflow-step-accent"></div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-step-num">04</div>
+      <div class="workflow-step-name">Publicação</div>
+      <div class="workflow-step-desc">Postagem no Instagram e alimentação do grupo da imprensa com o material preparado, dentro do tempo previsto para cada tipo de conteúdo.</div>
+      <div class="workflow-step-accent"></div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-step-num">05</div>
+      <div class="workflow-step-name">Avaliação</div>
+      <div class="workflow-step-desc">Acompanhamento básico dos resultados e desempenho das publicações para orientar os próximos ciclos de conteúdo.</div>
+      <div class="workflow-step-accent"></div>
+    </div>
+  </div>
+  <div class="workflow-bar"></div>
+</section>
+
+<!-- ──────────────────────────────────────────
+     P06 — OBJETIVOS
+────────────────────────────────────────── -->
+<section class="page" id="objetivos">
+  <span class="eyebrow">Objetivos da Parceria</span>
+  <h2 class="headline-lg">O QUE VAMOS<br>CONSTRUIR JUNTOS.</h2>
+
+  <div class="obj-grid">
+    <div class="obj-card" data-num="01">
+      <div class="obj-num">01 — DIGITAL</div>
+      <div class="obj-title">Profissionalizar a presença do SEC nas redes.</div>
+      <div class="obj-text">Transformar o perfil do clube em um canal reconhecível, com identidade visual consistente, frequência de publicação e editorial editorial definido.</div>
+    </div>
+
+    <div class="obj-card" data-num="02">
+      <div class="obj-num">02 — TORCIDA</div>
+      <div class="obj-title">Aproximar o clube dos torcedores.</div>
+      <div class="obj-text">Criar conteúdo que gere identificação, acompanhamento e engajamento real com o clube — especialmente nos dias de jogo e nos bastidores da rotina.</div>
+    </div>
+
+    <div class="obj-card" data-num="03">
+      <div class="obj-num">03 — IMPRENSA</div>
+      <div class="obj-title">Dar ao SEC voz organizada na mídia local.</div>
+      <div class="obj-text">Alimentar sistematicamente o grupo da imprensa com informações, resultados e material de qualidade, ampliando a presença do clube nas pautas regionais.</div>
+    </div>
+
+    <div class="obj-card" data-num="04">
+      <div class="obj-num">04 — ATLETAS</div>
+      <div class="obj-title">Valorizar quem representa o clube.</div>
+      <div class="obj-text">Dar visibilidade a jogadores e comissão técnica por meio de conteúdo que destaca performance, história e rotina — valorizando o plantel como ativo do clube.</div>
+    </div>
+
+    <div class="obj-card" data-num="05">
+      <div class="obj-num">05 — PATROCINADORES</div>
+      <div class="obj-title">Criar argumento para novos e renovação.</div>
+      <div class="obj-text">Uma comunicação digital ativa e profissional é argumento comercial real. O clube com presença digital forte atrai e retém patrocinadores com mais facilidade.</div>
+    </div>
+
+    <div class="obj-card" data-num="06">
+      <div class="obj-num">06 — IDENTIDADE</div>
+      <div class="obj-title">Construir reconhecimento ao longo do tempo.</div>
+      <div class="obj-text">Ao longo dos meses, a consistência da comunicação cria uma identidade digital forte e reconhecível para o SEC — dentro e fora de Sorriso.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────
+     P07 — INVESTIMENTO
+────────────────────────────────────────── -->
+<section class="page" id="investimento">
+  <span class="eyebrow">Investimento</span>
+  <h2 class="headline-lg">O QUE ESTÁ INCLUÍDO<br>NO R$ 1.800/MÊS.</h2>
+
+  <div class="invest-grid">
+    <div class="invest-price-block">
+      <div class="invest-price-label">Investimento mensal</div>
+      <div class="invest-price-value">R$ 1.800</div>
+      <div class="invest-price-period">por mês · valor fixo</div>
+      <div class="invest-price-note">
+        Inclui toda a gestão de comunicação digital do clube dentro do escopo apresentado.
+      </div>
+
+      <div class="invest-bullets">
+        <div class="invest-bullet">
+          <div class="invest-bullet-dot"></div>
+          <div class="invest-bullet-text">Gestão completa do Instagram</div>
+        </div>
+        <div class="invest-bullet">
+          <div class="invest-bullet-dot"></div>
+          <div class="invest-bullet-text">Alimentação do grupo da imprensa</div>
+        </div>
+        <div class="invest-bullet">
+          <div class="invest-bullet-dot"></div>
+          <div class="invest-bullet-text">Até 2 coberturas presenciais/mês</div>
+        </div>
+        <div class="invest-bullet">
+          <div class="invest-bullet-dot"></div>
+          <div class="invest-bullet-text">Criação de artes e edição de vídeos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="invest-items-block">
+      <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-400); margin-bottom: 24px;">Detalhamento do escopo</div>
+
+      <table class="invest-table">
+        <tr>
+          <td><div class="row-item-name"><div class="invest-dot"></div>Gestão do Instagram</div></td>
+          <td>✓ Incluído</td>
+        </tr>
+        <tr>
+          <td><div class="row-item-name"><div class="invest-dot"></div>Criação de artes gráficas</div></td>
+          <td>✓ Incluído</td>
+        </tr>
+        <tr>
+          <td><div class="row-item-name"><div class="invest-dot"></div>Edição de Reels e vídeos</div></td>
+          <td>✓ Incluído</td>
+        </tr>
+        <tr>
+          <td><div class="row-item-name"><div class="invest-dot"></div>Alimentação do grupo da imprensa</div></td>
+          <td>✓ Incluído</td>
+        </tr>
+        <tr>
+          <td><div class="row-item-name"><div class="invest-dot"></div>Planejamento editorial mensal</div></td>
+          <td>✓ Incluído</td>
+        </tr>
+        <tr>
+          <td><div class="row-item-name"><div class="invest-dot"></div>Coberturas presenciais em Sorriso</div></td>
+          <td>Até 2/mês</td>
+        </tr>
+        <tr>
+          <td><div class="row-item-name"><div class="invest-dot"></div>Deslocamento LRV → Sorriso</div></td>
+          <td style="color: var(--gray-300);">+ R$ 180/cobertura</td>
+        </tr>
+        <tr style="border-top: 1px solid rgba(141,220,0,0.2);">
+          <td style="padding-top: 20px;"><div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--white);">TOTAL MENSAL</div></td>
+          <td style="padding-top: 20px; font-size: 20px; color: var(--green);">R$ 1.800/mês</td>
+        </tr>
+      </table>
+
+      <div class="invest-note-box">
+        O deslocamento (R$ 180,00 por cobertura) não está incluso no valor mensal e será cobrado conforme a quantidade efetiva de coberturas realizadas. Coberturas em outras cidades serão avaliadas previamente. Demandas extras — eventos adicionais, produções especiais ou viagens — serão alinhadas e orçadas caso a caso.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────
+     P08 — CURSOS & CERTIFICAÇÕES
+────────────────────────────────────────── -->
+<section class="page" id="autoridade">
+  <span class="eyebrow">Formação & Autoridade</span>
+  <h2 class="headline-lg">COMUNICAÇÃO QUE<br><span class="text-green">CONHECE O JOGO.</span></h2>
+
+  <div class="certs-layout">
+    <div class="certs-left-block">
+      <div class="certs-stat">
+        <div class="certs-stat-value">15</div>
+        <div class="certs-stat-label">Cursos e certificações</div>
+      </div>
+      <p class="certs-left-note">
+        Formação específica em comunicação, jornalismo, marketing, gestão e inteligência artificial no futebol — o que garante que o SEC terá ao lado um profissional que entende tanto de redes sociais quanto do ambiente esportivo.
+      </p>
+    </div>
+
+    <div class="certs-list">
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Especialização em Jornalismo no Futebol</div>
+          <div class="cert-institution">Futebol Interativo</div>
+        </div>
+        <div class="cert-tag comunicacao">Jornalismo</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Especialização Comunicação e Marketing no Futebol</div>
+          <div class="cert-institution">Futebol Interativo</div>
+        </div>
+        <div class="cert-tag comunicacao">Comunicação</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Especialização em Media Training e Assessoria de Imprensa</div>
+          <div class="cert-institution">Futebol Interativo</div>
+        </div>
+        <div class="cert-tag comunicacao">Imprensa</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Gestão da Comunicação e do Marketing em Clubes de Futebol</div>
+          <div class="cert-institution">Instituto Federal de Educação, Ciência e Tecnologia do Ceará</div>
+        </div>
+        <div class="cert-tag marketing">Marketing</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Patrocínio e Marketing Esportivo</div>
+          <div class="cert-institution">MKT Esportivo</div>
+        </div>
+        <div class="cert-tag marketing">Marketing</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Sponsor: Patrocínio no Esporte</div>
+          <div class="cert-institution">THE360</div>
+        </div>
+        <div class="cert-tag marketing">Patrocínio</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Estrategista de Marcas</div>
+          <div class="cert-institution">Administradores.com</div>
+        </div>
+        <div class="cert-tag marketing">Branding</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Especialização em Gestão Executiva no Futebol</div>
+          <div class="cert-institution">Futebol Interativo</div>
+        </div>
+        <div class="cert-tag gestao">Gestão</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Certificado — Especialização em Gestão Executiva no Futebol</div>
+          <div class="cert-institution">THE360</div>
+        </div>
+        <div class="cert-tag gestao">Gestão</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Especialização em Gestão de Clubes Empresa</div>
+          <div class="cert-institution">Futebol Interativo</div>
+        </div>
+        <div class="cert-tag gestao">Gestão</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Business FC</div>
+          <div class="cert-institution">THE360</div>
+        </div>
+        <div class="cert-tag gestao">Gestão</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Introduction Into Football Scouting</div>
+          <div class="cert-institution">PFSA Education</div>
+        </div>
+        <div class="cert-tag futebol">Futebol</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Inteligência Artificial no Futebol</div>
+          <div class="cert-institution">Futebol Interativo</div>
+        </div>
+        <div class="cert-tag dados">IA</div>
+      </div>
+
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-content">
+          <div class="cert-name">Ciência de Dados</div>
+          <div class="cert-institution">Futebol Interativo</div>
+        </div>
+        <div class="cert-tag dados">Dados</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────────────────────────
+     P09 — PRÓXIMOS PASSOS
+────────────────────────────────────────── -->
+<section class="page" id="proximos">
+  <span class="eyebrow">Próximos Passos</span>
+
+  <div class="closing-grid">
+    <div class="closing-left">
+      <h2 class="closing-headline">
+        O PRÓXIMO PASSO É SIMPLES.
+      </h2>
+      <p class="closing-text">
+        Aprovada a proposta, definimos o início dos trabalhos e o fluxo de comunicação entre o SEC e a gestão. A ideia é começar rápido, com planejamento claro e estrutura definida desde o primeiro dia.
+      </p>
+
+      <div class="closing-steps">
+        <div class="closing-step">
+          <div class="closing-step-num"><span>1</span></div>
+          <div class="closing-step-text">Alinhamento e aprovação da proposta</div>
+        </div>
+        <div class="closing-step">
+          <div class="closing-step-num"><span>2</span></div>
+          <div class="closing-step-text">Definição do canal de comunicação entre o SEC e Guilherme</div>
+        </div>
+        <div class="closing-step">
+          <div class="closing-step-num"><span>3</span></div>
+          <div class="closing-step-text">Levantamento do material existente e briefing inicial</div>
+        </div>
+        <div class="closing-step">
+          <div class="closing-step-num"><span>4</span></div>
+          <div class="closing-step-text">Início do planejamento editorial e das publicações</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="closing-right">
+      <div class="closing-quote">
+        <div class="closing-quote-text">
+          "O clube acontece todo dia. A comunicação precisa acompanhar — e fazer o torcedor sentir que ele está presente mesmo quando não está."
+        </div>
+        <div class="closing-quote-attr">Guilherme Santiago — Comunicação Digital</div>
+      </div>
+
+      <div class="closing-summary-box">
+        <div class="closing-summary-label">Esta proposta em resumo</div>
+        <div class="closing-summary-items">
+          <div class="closing-summary-item">→ <strong>Gestão completa</strong> do Instagram do SEC</div>
+          <div class="closing-summary-item">→ <strong>Grupo da imprensa</strong> alimentado com regularidade</div>
+          <div class="closing-summary-item">→ <strong>Até 2 coberturas</strong> presenciais/mês em Sorriso</div>
+          <div class="closing-summary-item">→ Artes, vídeos e Reels incluídos</div>
+          <div class="closing-summary-item">→ Investimento: <strong style="color: var(--green); font-size: 18px;">R$ 1.800/mês</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing-final">
+    <div class="closing-final-name">Guilherme <span>Santiago</span></div>
+    <div class="closing-final-role">Comunicação e Gestão de Marca no Futebol</div>
+    <div class="closing-final-contact">42 9 8417-6616</div>
+    <div class="closing-meta">Lucas do Rio Verde – MT · Setembro de 2026</div>
+  </div>
+
+  <div class="cover-bottom-bar"></div>
+</section>
+
+</body>
+</html>
